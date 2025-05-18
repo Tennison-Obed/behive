@@ -17,7 +17,7 @@ const commonThemeOptions: ThemeOptions = {
       letterSpacing: '-0.02em',
     },
     h3: {
-      fontSize: '2rem',
+      fontSize: '2.25rem',
       fontWeight: 600,
       lineHeight: 1.3,
     },
@@ -77,7 +77,7 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1A1A1A',
+      main: '#263238',
       light: '#333333',
       dark: '#000000',
     },
@@ -91,7 +91,7 @@ export const lightTheme = createTheme({
       paper: '#F5F5F5',
     },
     text: {
-      primary: '#1A1A1A',
+      primary: '#263238',
       secondary: '#666666',
     },
     error: {
@@ -128,8 +128,8 @@ export const darkTheme = createTheme({
       paper: '#1E1E1E',
     },
     text: {
-      primary: '#FFFFFF',
-      secondary: '#B0B0B0',
+      primary: '#263238',
+      secondary: '#65624C',
     },
     error: {
       main: '#FF4D4D',

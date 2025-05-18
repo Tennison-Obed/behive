@@ -15,8 +15,8 @@ import {
   NavButton,
   MobileMenu,
 } from "./styles";
-import { PhoneIcon } from "../../icons/index";
-import Logo from '../../../assets/logo';
+import { PhoneIcon } from "../icons/index";
+import Logo from '../../assets/logo';
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 
 const Navbar: React.FC = () => {

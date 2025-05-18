@@ -1,10 +1,10 @@
 export const lightStyledTheme = {
   colors: {
-    primary: '#1A1A1A',
+    primary: '#263238',
     secondary: '#FFBB00',
     background: '#FFFFFF',
     text: {
-      primary: '#1A1A1A',
+      primary: '#263238',
       secondary: '#666666',
     },
     error: '#FF4D4D',
