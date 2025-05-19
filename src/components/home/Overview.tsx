@@ -1,41 +1,59 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React, { useEffect } from "react";
+import { Grid, Typography, Box, CircularProgress } from "@mui/material";
 import { OverviewContainer } from "./style";
-import { Grid, Typography } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
+import { fetchWorkspaceData } from "../../store/slices/workspaceSlice";
+import SpaceCard from "../cards/SpaceCard";
 
-// #region constants
+const Overview: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { data: workspaceData, loading, error } = useSelector((state: RootState) => state.workspace);
 
-// #endregion
+  useEffect(() => {
+    dispatch(fetchWorkspaceData());
+  }, [dispatch]);
 
-// #region styled-components
+  if (loading) {
+    return (
+      <OverviewContainer>
+        <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
+          <CircularProgress />
+        </Box>
+      </OverviewContainer>
+    );
+  }
 
-// #endregion
+  if (error) {
+    return (
+      <OverviewContainer >
+        <Typography color="error" align="center">
+          {error}
+        </Typography>
+      </OverviewContainer>
+    );
+  }
 
-// #region functions
-
-// #endregion
-
-// #region component
-const propTypes = {};
-
-const defaultProps = {};
-
-/**
- *
- */
-const Overview = () => {
   return (
-    <OverviewContainer  maxWidth={"lg"} margin={"auto"} marginTop={10}>
-      <Grid>
-        <Typography variant="h3"> Our Space Overview</Typography>
+    <OverviewContainer>
+      <Grid container spacing={3}>
+        <Grid size={{ xs: 12 }}>
+          <Typography variant="h3" gutterBottom>
+            Our Space Overview
+          </Typography>
+        </Grid>
+        {workspaceData && (
+          <>
+          {
+            workspaceData.map(space=> <SpaceCard space={space} ></SpaceCard>)
+          }
+          
+    
+          </>
+        )}
       </Grid>
     </OverviewContainer>
   );
 };
-
-Overview.propTypes = propTypes;
-Overview.defaultProps = defaultProps;
-// #endregion
 
 export default Overview;

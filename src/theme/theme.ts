@@ -50,6 +50,57 @@ const commonThemeOptions: ThemeOptions = {
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
           },
         },
+        containedPrimary: {
+          boxShadow: 'none',
+          color: 'var(--text-primary)',
+          '&:hover': {
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          },
+        },
+        containedSecondary: {
+          backgroundColor: 'var(--secondary-main)',
+          color: 'var(--text-primary)',
+          '&:hover': {
+            backgroundColor: 'var(--secondary-dark)',
+            boxShadow: '0 4px 8px rgba(255, 187, 0, 0.2)',
+          },
+          '&:active': {
+            backgroundColor: 'var(--secondary-dark)',
+            boxShadow: '0 2px 4px rgba(255, 187, 0, 0.15)',
+          },
+          '&:disabled': {
+            backgroundColor: 'var(--grey-300)',
+            color: 'var(--grey-500)',
+          },
+        },
+        outlinedSecondary: {
+          borderColor: 'var(--secondary-main)',
+          color: 'var(--secondary-main)',
+          '&:hover': {
+            borderColor: 'var(--secondary-dark)',
+            backgroundColor: 'rgba(255, 187, 0, 0.04)',
+            borderWidth: '2px',
+          },
+          '&:active': {
+            backgroundColor: 'rgba(255, 187, 0, 0.08)',
+          },
+          '&:disabled': {
+            borderColor: 'var(--grey-300)',
+            color: 'var(--grey-500)',
+          },
+        },
+        textSecondary: {
+          color: 'var(--secondary-main)',
+          '&:hover': {
+            backgroundColor: 'rgba(255, 187, 0, 0.04)',
+          },
+          '&:active': {
+            backgroundColor: 'rgba(255, 187, 0, 0.08)',
+          },
+          '&:disabled': {
+            color: 'var(--grey-500)',
+          },
+        },
       },
     },
     MuiCard: {

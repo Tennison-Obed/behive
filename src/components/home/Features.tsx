@@ -79,7 +79,7 @@ const Features = () => {
   };
 
   return (
-    <FeatureContainer id="features" maxWidth="lg" margin="auto">
+    <FeatureContainer id="features" maxWidth="lg"  margin="auto" marginBottom={20}>
       <Box marginBottom={2}>
         <Typography variant="h3">Why Choose Us ?</Typography>
       </Box>

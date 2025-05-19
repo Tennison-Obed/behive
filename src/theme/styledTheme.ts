@@ -2,7 +2,7 @@ export const lightStyledTheme = {
   colors: {
     primary: '#263238',
     secondary: '#FFBB00',
-    background: '#FFFFFF',
+    background: '#F9FAFF',
     text: {
       primary: '#263238',
       secondary: '#666666',

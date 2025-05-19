@@ -9,7 +9,7 @@ const defaultProps = {};
 
 const Hero = () => {
   return (
-    <HeroContainer id="hero-section">
+    <HeroContainer id="hero-section" marginBottom={20}>
       <Grid container maxWidth="lg" margin="auto" className="hero-container" spacing={2}>
         <Grid size={{ xs: 12, md: 6 }} className="left-section">
           <Typography variant="h2" sx={{ 

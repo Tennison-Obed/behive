@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const HeroContainer = styled(Grid)`
   position: relative;
-  height: 90vh;
+  height: 80vh;
   padding-top: 25vh;
   overflow: hidden;
 
@@ -123,8 +123,8 @@ export const FeatureContainer = styled(Grid)`
   }
 `;
 
-
-
 export const OverviewContainer = styled(Grid)`
+  max-width: 1200px;
+  margin: 0 auto;
 
-`
+`;

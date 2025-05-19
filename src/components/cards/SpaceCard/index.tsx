@@ -1,7 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { SpaceCardContainer } from './style';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { SpaceCardContainer } from "./style";
+import { Badge, Box, Button, ButtonGroup, Typography } from "@mui/material";
+import {
+  STATIC_ASSETS_BASEURL,
+  WorkspaceData,
+} from "../../../store/slices/workspaceSlice";
+import { AstDirectionIcon, NextIcon } from "../../icons";
 
 // #region constants
 
@@ -21,13 +27,89 @@ const propTypes = {};
 const defaultProps = {};
 
 /**
- * 
+ *
  */
-const SpaceCard = () => {
-    return <SpaceCardContainer>
-        dsfdsf
-    </SpaceCardContainer>;
-}
+const SpaceCard = ({ space }: { space: WorkspaceData }) => {
+  return (
+    <SpaceCardContainer size={{ xs: 12, md: 6, lg: 4 }}>
+      <Box
+        p={2}
+        display={"flex"}
+        className="header-section"
+        alignItems={"center"}
+      >
+        <Typography
+          margin={0}
+          marginRight={5}
+          className="text-primary"
+          fontSize={"20px"}
+          fontWeight={600}
+          gutterBottom
+        >
+          {space.name}
+        </Typography>
+        <Box display={"inline"} className="tool-section">
+          <AstDirectionIcon></AstDirectionIcon>
+          <Typography fontSize={".6rem"} color="textDisabled" variant="caption">
+            60kms
+          </Typography>
+        </Box>
+      </Box>
+      <Box padding={"10px"} paddingTop={0}>
+        <img
+          className="thumbnail-img"
+          src={`${STATIC_ASSETS_BASEURL}/${space.thumbnail}`}
+        ></img>
+      </Box>
+      <Box
+        padding={"10px"}
+        paddingTop={0}
+        display={"flex"}
+        justifyContent={"space-between"}
+      >
+        {/* <Button  className="action-btn " size="large" variant="contained" color="primary">
+          <Box component={Typography} className="text-secondary" display={"block"}>
+            Day Pass
+          </Box>
+          <Box component={Typography}  variant="h4">
+          $ 249 <span className="text-sm text-secondary "> /Day </span>
+          </Box>
+          <NextIcon className="next-icon"></NextIcon>
+        </Button> */}
+        <Button className="action-btn " variant="contained" color="primary">
+          <Box
+            component={Typography}
+            display={"block"}
+            variant="button"
+            className="text-sm text-secondary"
+          >
+            Day Pass
+          </Box>
+          <Box component={Typography} variant="button" fontSize={"20px"}>
+            $ 300<span className=" text-xs text-secondary ">/ 10 Days </span>
+          </Box>
+          <NextIcon className="next-icon"></NextIcon>
+        </Button>
+        <Badge color="secondary"  badgeContent={"20% Discount"}>
+          <Button className="action-btn " variant="contained" color="secondary">
+            <Box
+              component={Typography}
+              display={"block"}
+              variant="button"
+              className="text-sm text-secondary"
+            >
+              Day Pass
+            </Box>
+            <Box component={Typography} variant="button" fontSize={"20px"}>
+              $ 300<span className=" text-xs text-secondary ">/ 10 Days </span>
+            </Box>
+            <NextIcon className="next-icon"></NextIcon>
+          </Button>
+        </Badge>
+      </Box>
+    </SpaceCardContainer>
+  );
+};
 
 SpaceCard.propTypes = propTypes;
 SpaceCard.defaultProps = defaultProps;
