@@ -31,7 +31,7 @@ const defaultProps = {};
  */
 const SpaceCard = ({ space }: { space: WorkspaceData }) => {
   return (
-    <SpaceCardContainer size={{ xs: 12, md: 6, lg: 4 }}>
+    <SpaceCardContainer size={{ xs: 12, sm: 6, md: 6, lg: 4 }}>
       <Box
         p={2}
         display={"flex"}
@@ -42,7 +42,10 @@ const SpaceCard = ({ space }: { space: WorkspaceData }) => {
           margin={0}
           marginRight={5}
           className="text-primary"
-          fontSize={"20px"}
+          sx={{
+            fontSize: { xs: "1rem", sm: "1rem", md: "1rem", lg: "1.2rem" },
+            lineHeight: { xs: 1.2, md: 1.5 },
+          }}
           fontWeight={600}
           gutterBottom
         >
@@ -67,15 +70,6 @@ const SpaceCard = ({ space }: { space: WorkspaceData }) => {
         display={"flex"}
         justifyContent={"space-between"}
       >
-        {/* <Button  className="action-btn " size="large" variant="contained" color="primary">
-          <Box component={Typography} className="text-secondary" display={"block"}>
-            Day Pass
-          </Box>
-          <Box component={Typography}  variant="h4">
-          $ 249 <span className="text-sm text-secondary "> /Day </span>
-          </Box>
-          <NextIcon className="next-icon"></NextIcon>
-        </Button> */}
         <Button className="action-btn " variant="contained" color="primary">
           <Box
             component={Typography}
@@ -90,7 +84,7 @@ const SpaceCard = ({ space }: { space: WorkspaceData }) => {
           </Box>
           <NextIcon className="next-icon"></NextIcon>
         </Button>
-        <Badge color="secondary"  badgeContent={"20% Discount"}>
+        <Badge color="secondary" badgeContent={"20% Discount"}>
           <Button className="action-btn " variant="contained" color="secondary">
             <Box
               component={Typography}

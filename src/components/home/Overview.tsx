@@ -8,7 +8,11 @@ import SpaceCard from "../cards/SpaceCard";
 
 const Overview: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { data: workspaceData, loading, error } = useSelector((state: RootState) => state.workspace);
+  const {
+    data: workspaceData,
+    loading,
+    error,
+  } = useSelector((state: RootState) => state.workspace);
 
   useEffect(() => {
     dispatch(fetchWorkspaceData());
@@ -17,7 +21,12 @@ const Overview: React.FC = () => {
   if (loading) {
     return (
       <OverviewContainer>
-        <Box display="flex" justifyContent="center" alignItems="center" minHeight="200px">
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          minHeight="200px"
+        >
           <CircularProgress />
         </Box>
       </OverviewContainer>
@@ -26,7 +35,7 @@ const Overview: React.FC = () => {
 
   if (error) {
     return (
-      <OverviewContainer >
+      <OverviewContainer>
         <Typography color="error" align="center">
           {error}
         </Typography>
@@ -35,20 +44,25 @@ const Overview: React.FC = () => {
   }
 
   return (
-    <OverviewContainer>
+    <OverviewContainer padding={{ xs: 2, md: 5 }} marginBottom={5}>
       <Grid container spacing={3}>
         <Grid size={{ xs: 12 }}>
-          <Typography variant="h3" gutterBottom>
+          <Typography
+            variant="h3"
+            sx={{
+              fontSize: { xs: "1.6rem", sm: "2rem", md: "3rem" },
+              lineHeight: { xs: 1.2, md: 1.5 },
+            }}
+            gutterBottom
+          >
             Our Space Overview
           </Typography>
         </Grid>
         {workspaceData && (
           <>
-          {
-            workspaceData.map(space=> <SpaceCard space={space} ></SpaceCard>)
-          }
-          
-    
+            {workspaceData.map((space) => (
+              <SpaceCard space={space}></SpaceCard>
+            ))}
           </>
         )}
       </Grid>

@@ -18,8 +18,6 @@ export const SpaceCardContainer = styled(Grid)`
     height: 80px;
   }
 
-
-
   & img.thumbnail-img {
     width: 100%;
     height: 202px;
@@ -40,23 +38,22 @@ export const SpaceCardContainer = styled(Grid)`
     margin-left: auto;
   }
 
-
-  & .MuiBadge-root span.MuiBadge-standard.MuiBadge-badge{
+  & .MuiBadge-root span.MuiBadge-standard.MuiBadge-badge {
     left: 50%;
     position: absolute;
     width: 100px;
-    height:18px;
-    font-size: .65rem;
+    height: 18px;
+    font-size: 0.65rem;
     display: block;
     top: -10px;
     transform: translateX(-50%);
     background-color: var(--background-primary);
-    color:var(--primary-contrast-text);
+    color: var(--primary-contrast-text);
     border-radius: 4px;
     padding: 4px;
     text-align: center;
     letter-spacing: 1.5px;
-    }
+  }
 
   & .MuiButtonBase-root.action-btn {
     display: block;
@@ -64,12 +61,9 @@ export const SpaceCardContainer = styled(Grid)`
     text-align: left;
     padding: 5px 8px 5px 8px;
     width: 165px;
-    & p{
-
+    @media (max-width: 320px) {
+      width: auto;
     }
-
-
-
 
     & .next-icon {
       position: absolute;

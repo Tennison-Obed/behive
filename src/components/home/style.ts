@@ -6,42 +6,53 @@ export const HeroContainer = styled(Grid)`
   height: 80vh;
   padding-top: 25vh;
   overflow: hidden;
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    /* height: 100vh; */
+    padding-top: 10vh;
+  }
 
   .hero-container {
     display: flex;
     flex-direction: row;
-
     @media (max-width: 768px) {
       flex-direction: column-reverse;
-      padding-top: 5vh;
     }
   }
 
+  /* backgroud texture */
   &::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 1200px;
+    height: 754px;
     background-image: url("/bg/bg1.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: -450px;
+    /* background-position: -450px; */
     z-index: 1;
+    mix-blend-mode: multiply;
 
     @media (max-width: 768px) {
-      background-position: center;
+      top: 50vh;
+      left: 0px;
+      width: 100vw;
+      background-position: unset;
     }
   }
 
+  /* right col orange backdrop */
   &::after {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
-    height: 60%;
+    width: 644px;
+    height: 743px;
     background-image: url("/bg/bg2.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -50,8 +61,7 @@ export const HeroContainer = styled(Grid)`
 
     @media (max-width: 768px) {
       width: 100%;
-      height: 40%;
-      background-position: center;
+      right: 0px;
     }
   }
 
@@ -66,17 +76,30 @@ export const HeroContainer = styled(Grid)`
     }
   }
 
+  /* right col image */
+  img.right-bg-img {
+    width: 388px;
+    height: 388px;
+    object-fit: contain;
+    position: absolute;
+    top: 20vh;
+    right: 18vw;
+    mix-blend-mode: multiply;
+    @media (max-width: 768px) {
+      position: relative;
+      top: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      /* height: 388px; */
+    }
+  }
   & .right-section {
-    position: relative;
+    /* position: relative; */
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
 
     @media (max-width: 768px) {
       margin-bottom: 20px;
@@ -104,6 +127,11 @@ export const FeatureContainer = styled(Grid)`
     .feature-icon {
       margin-right: 20px;
       color: var(--secondary-main);
+
+      @media (max-width: 320px) {
+        margin-right: 5px;
+        width: 30px;
+      }
     }
 
     .feature-title {
@@ -126,5 +154,26 @@ export const FeatureContainer = styled(Grid)`
 export const OverviewContainer = styled(Grid)`
   max-width: 1200px;
   margin: 0 auto;
+`;
 
+export const FooterContainer = styled(Grid)`
+  max-width: 1200px;
+  margin: 0 auto;
+
+  & .MuiGrid-root.MuiGrid-container {
+    background-color: var(--background-white);
+    border: 1px solid var(--grey-200);
+    border-radius: 18px;
+    padding: 3rem;
+    position: relative;
+
+    & .img-block img {
+      position: absolute;
+      left: 5%;
+      bottom: 0px;
+      &.image-2 {
+        left: 21%;
+      }
+    }
+  }
 `;

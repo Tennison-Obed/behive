@@ -11,6 +11,7 @@ import { Container } from "./styles";
 import Hero from "../../components/home/Hero";
 import Features from "../../components/home/Features";
 import Overview from "../../components/home/Overview";
+import Footer from "../../components/home/Footer";
 
 const Home: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const Home: React.FC = () => {
       {/* features sections */}
       <Features />
       <Overview></Overview>
+      <Footer></Footer>
 
     </Container>
   );

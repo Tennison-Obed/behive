@@ -79,9 +79,14 @@ const Features = () => {
   };
 
   return (
-    <FeatureContainer id="features" maxWidth="lg"  margin="auto" marginBottom={20}>
+    <FeatureContainer id="features"  maxWidth="lg"  padding={{xs:2, md: 5}} margin="auto" marginBottom={5}>
       <Box marginBottom={2}>
-        <Typography variant="h3">Why Choose Us ?</Typography>
+        <Typography variant="h3" 
+        
+        sx={{
+            fontSize: { xs: "1.6rem", sm:"2rem", md: "3rem"  },
+            lineHeight: { xs: 1.2, md: 1.5 },
+          }}>Why Choose Us ?</Typography>
       </Box>
       <Grid container spacing={0}>
         {features.map((feature, index) => {

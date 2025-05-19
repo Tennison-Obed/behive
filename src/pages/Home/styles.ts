@@ -6,6 +6,6 @@ export const ButtonContainer = styled(Box)`
 `;
 
 export const Container = styled("div")`
-  padding-bottom: 80vh;
+  padding-bottom: 10vh;
 `;
 
