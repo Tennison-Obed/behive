@@ -80,7 +80,7 @@ const SpaceCard = ({ space }: { space: WorkspaceData }) => {
             Day Pass
           </Box>
           <Box component={Typography} variant="button" fontSize={"20px"}>
-            $ 300<span className=" text-xs text-secondary ">/ 10 Days </span>
+            $ {space.day_pass_price}<span className=" text-xs text-secondary ">/ 10 Days </span>
           </Box>
           <NextIcon className="next-icon"></NextIcon>
         </Button>
@@ -95,7 +95,7 @@ const SpaceCard = ({ space }: { space: WorkspaceData }) => {
               Day Pass
             </Box>
             <Box component={Typography} variant="button" fontSize={"20px"}>
-              $ 300<span className=" text-xs text-secondary ">/ 10 Days </span>
+              $ {( Math.round( parseInt(space?.day_pass_price||"400") - parseInt(space?.day_pass_price || "400")/20) )}<span className=" text-xs text-secondary ">/ 10 Days </span>
             </Box>
             <NextIcon className="next-icon"></NextIcon>
           </Button>

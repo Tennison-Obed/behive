@@ -7,6 +7,7 @@ export interface WorkspaceData {
   forks_count: number;
   language: string;
   thumbnail: string | null
+  day_pass_price:string | null
 }
 
 interface WorkspaceState {

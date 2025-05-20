@@ -116,12 +116,13 @@ export const FeatureContainer = styled(Grid)`
     border-bottom: 1px solid var(--grey-200);
     border-right: 1px solid var(--grey-200);
     transition: all 0.3s ease;
+    cursor: pointer;
 
     &:hover {
       box-shadow: var(--shadow-2);
       transform: translateY(-2px);
       border-radius: 10px;
-      background-color: var(--white);
+      background-color: var(--background-white);
     }
 
     .feature-icon {
