@@ -1,4 +1,108 @@
-export const lightStyledTheme = {
+interface BreakpointValues {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+}
+
+interface Breakpoints {
+  values: BreakpointValues;
+  up: (key: keyof BreakpointValues) => string;
+  down: (key: keyof BreakpointValues) => string;
+  between: (start: keyof BreakpointValues, end: keyof BreakpointValues) => string;
+  only: (key: keyof BreakpointValues) => string;
+}
+
+interface Theme {
+  colors: {
+    primary: string;
+    secondary: string;
+    background: string;
+    text: {
+      primary: string;
+      secondary: string;
+    };
+    error: string;
+    success: string;
+    warning: string;
+    info: string;
+    border: string;
+    hover: string;
+  };
+  spacing: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    xxl: string;
+  };
+  borderRadius: {
+    small: string;
+    medium: string;
+    large: string;
+    round: string;
+  };
+  shadows: {
+    small: string;
+    medium: string;
+    large: string;
+  };
+  breakpoints: Breakpoints;
+  typography: {
+    fontFamily: string;
+    fontSizes: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
+      xxxl: string;
+    };
+    fontWeights: {
+      regular: number;
+      medium: number;
+      semibold: number;
+      bold: number;
+    };
+    lineHeights: {
+      tight: number;
+      normal: number;
+      relaxed: number;
+    };
+  };
+}
+
+const breakpointValues: BreakpointValues = {
+  xs: 0,
+  sm: 600,
+  md: 960,
+  lg: 1280,
+  xl: 1920,
+};
+
+const breakpoints: Breakpoints = {
+  values: breakpointValues,
+  up: (key) => `@media (min-width:${breakpointValues[key]}px)`,
+  down: (key) => `@media (max-width:${breakpointValues[key] - 0.05}px)`,
+  between: (start, end) => 
+    `@media (min-width:${breakpointValues[start]}px) and (max-width:${breakpointValues[end] - 0.05}px)`,
+  only: (key) => {
+    const keys = Object.keys(breakpointValues) as Array<keyof BreakpointValues>;
+    const index = keys.indexOf(key);
+    if (index === 0) {
+      return breakpoints.down(keys[1]);
+    }
+    if (index === keys.length - 1) {
+      return breakpoints.up(key);
+    }
+    return breakpoints.between(key, keys[index + 1]);
+  },
+};
+
+export const lightStyledTheme: Theme = {
   colors: {
     primary: '#263238',
     secondary: '#FFBB00',
@@ -33,13 +137,7 @@ export const lightStyledTheme = {
     medium: '0 4px 12px rgba(0, 0, 0, 0.05)',
     large: '0 8px 24px rgba(0, 0, 0, 0.1)',
   },
-  breakpoints: {
-    xs: '0px',
-    sm: '600px',
-    md: '960px',
-    lg: '1280px',
-    xl: '1920px',
-  },
+  breakpoints,
   typography: {
     fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
     fontSizes: {
@@ -65,7 +163,7 @@ export const lightStyledTheme = {
   },
 };
 
-export const darkStyledTheme = {
+export const darkStyledTheme: Theme = {
   ...lightStyledTheme,
   colors: {
     primary: '#FFFFFF',

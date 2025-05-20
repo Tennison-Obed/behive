@@ -159,21 +159,69 @@ export const OverviewContainer = styled(Grid)`
 export const FooterContainer = styled(Grid)`
   max-width: 1200px;
   margin: 0 auto;
+  padding: ${({ theme }) => theme.spacing.lg};
+  
 
-  & .MuiGrid-root.MuiGrid-container {
+  ${({ theme }) => theme.breakpoints.up('md')} {
+    padding: ${({ theme }) => theme.spacing.md};
+  }
+
+  .MuiGrid-root.MuiGrid-container.wrapper {
     background-color: var(--background-white);
-    border: 1px solid var(--grey-200);
     border-radius: 18px;
-    padding: 3rem;
+    border: 1px solid var(--grey-200);
+    /* padding: 3rem; */
     position: relative;
 
-    & .img-block img {
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+   flex-direction: column;
+   height: 100vh;
+  }
+
+  }
+
+  .app-preview {
+    position: relative;
+    
+    .preview-image {
       position: absolute;
       left: 5%;
-      bottom: 0px;
-      &.image-2 {
+      bottom: 0;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      &.preview-image-2 {
         left: 21%;
       }
     }
   }
+
+
+
+
+  ${({ theme }) => theme.breakpoints.up('sm')} {
+    .app-preview {
+      .preview-image {
+        &.preview-image-2 {
+          left: 40%;
+        }
+      }
+    }
+  }
+
+  ${({ theme }) => theme.breakpoints.down('sm')} {
+    .app-preview {
+      .preview-image {
+        &.preview-image-2 {
+          left: 20%;
+        }
+      }
+    }
+  }
+
+
 `;
